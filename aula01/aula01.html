@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+
+<title>Primeiros Passos no Desenvolvimento de Sistemas Web com PHP</title>
+
+<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+<meta name="author" content="Hakim El Hattab">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+<!-- Theme used for syntax highlighting of code -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+
+<!-- Printing and PDF exports -->
+<script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+	<section>
+		<h3>Primeiros Passos no </h3>
+		<h1>Desenvolvimento de Sistemas Web com PHP</h1>
+		<p>Diogo Pina</p>
+		<p>Curso de Verão - IME-USP</p>
+	</section>
+	<section>
+		<h2>O que é PHP?</h2>
+		<ul>
+			<li>1994: Rasmus Lerdorf</li>
+			<li>1997: PHP 2</li>
+			<li>1998: PHP 3 + Zeev Suraski e Andi Gutmans = Zend Engine</li>
+			<li>2000: PHP 4</li>
+			<li>2004: PHP 5</li>
+			<li>2015: PHP 7</li>
+		</ul>
+	</section>
+	<section>
+		<h2>O que é PHP?</h2>
+		<ul>
+			<li>Linguagem Interpretada</li>
+			<li>Inicialmente scripts para Internet</li>
+			<li>Orientada a Objetos</li>
+			<li>Linha de comando</li>
+			<li>Permite testes automatizados</li>
+			<li>78% dos sites <a href="https://w3techs.com/technologies/details/pl-php/5/all" target="_left">Ver</a>
+		</ul>
+	</section>
+	<section>
+		<h2>Programa PHP</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Extensão</th>
+					<th>Significado</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>.php</td>
+					<td>Arquivo que contem um programa PHP.</td>
+				</tr>
+				<tr>
+					<td>.class.php</td>
+					<td>Arquivo que contem uma classe PHP.</td>
+				</tr>
+				<tr>
+					<td>.inc.php</td>
+					<td>Arquivo que a ser incluído por um programa PHP.</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+	<section>
+		<h2>Programa PHP</h2>
+		<pre><code class="php" data-trim contenteditable>
+<?php
+echo "Hello World!";
+?>
+
+<? echo "Hello World!"; ?>
+
+		</code></pre>
+	</section>
+
+	<section>
+		<h2>Arquitetura <br />	Cliente x Servidor</h2>
+		<img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Cliente-Servidor.png">
+		<p><small>Wikipedia</small></p>
+	</section>
+
+	<section>
+		<h2>Protocolo HTTP</h2>
+		<img src="https://img.vivaolinux.com.br/imagens/artigos/comunidade/figura%2001.jpg">
+		<p><small>Figura 01 - Comunicação Cliente servidor. Fonte: KUROSE, 2006</small></p>
+	</section>
+	<section>
+		<h2>Protocolo HTTP</h2>
+		<ul>
+			<li>Mensagem: Cabeçalho + Corpo</li>
+			<li>Método: <b>GET, POST</b>, PUT, DELETE, HEAD, TRACE, OPTIONS, CONNECT</li>
+			<li>Parâmetros, /index.php?a=1&b=2</li>
+			<li>Cookies</li>
+			<li>Código de Retorno</li>
+			<ul>
+				<li>1xx: Informação</li>
+				<li>2xx: Sucesso</li>
+				<li>3xx: Redirecionamento</li>
+				<li>4xx: Erro do cliente</li>
+				<li>5xx: Erro do servidor</li>
+			</ul>
+		</ul>
+	</section>
+	<section>
+		<h2>Protocolo HTTP</h2>
+		<pre><code class="http" data-trim contenteditable>
+POST /diretorio/arquivo.html HTTP/1.1
+Host: www.exemplo.com
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 6.1; pt-BR; rv:1.9.2b5) Gecko/20091204 Firefox/3.6b5
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: pt-br,pt;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip,deflate
+Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-alive: 115
+Cookie: nome=valor; nome2=valor2
+Connection: keep-alive
+Content-Length: 28
+usuario=exemplo&senha=123456
+		</code></pre>
+	</section>
+
+	<section>
+		<h2>XAMPP</h2>
+		<ul>
+			<li>Apache + MariaDB + PHP + Perl</li>
+			<li>https://www.apachefriends.org/pt_br/index.html</li>
+		</ul>
+
+		<h3>Alternativas</h3>
+		<ul>
+			<li>Apache -> Ngix</li>
+			<li>MariaDB -> Mysql, Postgresql, Mysql Server, Oracle DB, Mongo DB</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Comentários</h2>
+		<pre><code class="php" data-trim contenteditable>
+// única linha
+
+/*
+bloco de código
+*/
+
+		</code></pre>
+	</section>	
+
+	<section>
+		<h2>Variáveis</h2>
+		<ul>
+			<li>Inicia com o caracter $</li>
+			<li>Não comece com números.</li>
+			<li>Não utilize espaços em branco.</li>
+			<li>Não utlize caracters especiais.</li>
+			<li>O nome deve ser significativos e curtos.</li>
+			<li>Letras minúsculas e palavras separadas por "_" ou camel case.</li>
+			<li>Case sensitive</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Variáveis</h2>
+		<pre><code class="php" data-trim contenteditable>
+
+$nulo = null;
+
+$booleano = true;
+
+$numero = 4;
+$numero = 4.5;
+
+$nome = "João";
+$nome = 'João';
+
+$vetor = array("Pera", "Maçã", "Uva");
+
+$objeto = new Classe();
+
+		</code></pre>
+	</section>	
+
+	<section>
+		<h2>Constantes</h2>
+		<pre><code class="php" data-trim contenteditable>
+define('LIMITE_MAXIMO', 50);
+
+echo LIMITE_MAXIMO;
+		</code></pre>
+	</section>
+
+	<section>
+		<h2>Operadores Aritméticos</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Operador</th>
+					<th>Descrição</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>+</td>
+					<td>Adição</td>
+				</tr>
+				<tr>
+					<td>-</td>
+					<td>Subtração</td>
+				</tr>
+				<tr>
+					<td>*</td>
+					<td>Multiplicação</td>
+				</tr>
+				<tr>
+					<td>/</td>
+					<td>Divisão</td>
+				</tr>
+				<tr>
+					<td>%</td>
+					<td>Módulo - resto da divisão</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<section>
+		<h2>Operadores Binários</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Operador</th>
+					<th>Descrição</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>==</td>
+					<td>Igual</td>
+				</tr>
+				<tr>
+					<td>===</td>
+					<td>Idêntico</td>
+				</tr>
+				<tr>
+					<td>!=</td>
+					<td>Diferente</td>
+				</tr>
+				<tr>
+					<td><</td>
+					<td>Menor</td>
+				</tr>
+				<tr>
+					<td>></td>
+					<td>Maior</td>
+				</tr>
+				<tr>
+					<td><=</td>
+					<td>Menor igual</td>
+				</tr>
+				<tr>
+					<td>></td>
+					<td>Maior igual</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<section>
+		<h2>Exemplos</h2>
+		<pre><code class="php" data-trim contenteditable>
+$num1 = 2;
+$num2 = 3;
+$num3 = "2";
+
+($num1 == $num3) // true
+($num1 === $num3) // false
+
+($num1 != $num2) // true
+
+($num1 > $num2) // false
+($num1 < $num2) // true
+($num1 >= $num2) // false
+($num1 <= $num2) // true
+		</code></pre>
+	</section>
+
+<section>
+		<h2>Operadores Lógicos</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Operador</th>
+					<th>Descrição</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>($a && $b)</td>
+					<td>E: Verdadeiro se $a e $b forem verdadeiros</td>
+				</tr>
+				<tr>
+					<td>($a || $b)</td>
+					<td>OU: Verdadeiro se $a ou $b forem verdadeiros</td>
+				</tr>
+				<tr>
+					<td>($a and $b)</td>
+					<td>E: Verdadeiro se $a e $b forem verdadeiros</td>
+				</tr>
+				<tr>
+					<td>($a or $b)</td>
+					<td>OU: Verdadeiro se $a ou $b forem verdadeiros</td>
+				</tr>
+				<tr>
+					<td>($a xor $b)</td>
+					<td>XOR: Verdadeiro se $a ou $b forem verdadeiros exclusivamente</td>
+				</tr>
+				<tr>
+					<td>! $a</td>
+					<td>NOT: Verdadeiro se $a for falso</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<section>
+		<h2>Comandos de Saída</h2>
+		<pre><code class="php" data-trim contenteditable>
+echo "oi";
+//oi
+
+print("oi");
+//oi
+
+$vetor = array("Pera", "Maçã", "Uva");
+print_r($vetor); 
+/*( [0] => Pera
+    [1] => Maçã
+    [2] => Uva
+)*/
+
+var_dump($vetor);
+/*array(3) {
+  [0]=>
+  string(4) "Pera"
+  [1]=>
+  string(6) "Maçã"
+  [2]=>
+  string(3) "Uva"
+}*/
+		</code></pre>
+	</section>	
+
+	<section>
+		<h2>Estrutura de Controle - IF</h2>
+		<pre><code class="php" data-trim contenteditable>
+$a = 5;
+
+if ($a == 5) {
+	echo "$a é igual a 5";
+}
+else if ($a = 7) {
+	echo "$a é igual a 5";
+}
+else {
+	echo "Nenhuma das condições anteriores";
+}
+		</code></pre>
+	</section>	
+
+	<section>
+		<h2>Estrutura de Controle - WHILE</h2>
+		<pre><code class="php" data-trim contenteditable>
+$i = 1;
+while ($i <= 5) {
+	echo $i;
+
+	$i++;
+}
+//12345
+		</code></pre>
+	</section>	
+
+	<section>
+		<h2>Estrutura de Controle - FOR/FOREACH/</h2>
+		<pre><code class="php" data-trim contenteditable>
+for ($i=1; $i <= 5; $i++) {
+	echo $i;
+}
+//12345
+
+$vetor = array("Pera", "Maçã", "Uva");
+for ($i=0; $i < count($vetor); $i++) {
+	echo $vetor[$i];
+}
+//PeraMaçãUva
+
+foreach ($vetor as $chave => $valor) {
+	echo "$chave->$valor ";
+}
+//0->Pera 1->Maçã 2->Uva
+		</code></pre>
+	</section>	
+
+	<section>
+		<h2>Estrutura de Controle - SWITCH</h2>
+		<pre><code class="php" data-trim contenteditable>
+$nome = "Maria";
+switch ($nome) {
+	case 'João':
+		# code...
+		break;
+	case 'Maria':
+		# code...
+		break;
+	default:
+		# code...
+		break;
+}
+		</code></pre>
+	</section>		
+
+	<section>
+		<h2>Funções</h2>
+		<pre><code class="php" data-trim contenteditable>
+function minhaFuncao($a, $b, $c) {
+	$resultado = $a + b * c;
+
+	return $resultado;
+}
+		</code></pre>
+	</section>	
+
+
+
+</div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+// More info https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+controls: true,
+progress: true,
+history: true,
+center: true,
+
+transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+// More info https://github.com/hakimel/reveal.js#dependencies
+dependencies: [
+	{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+	{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+	{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+	{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+	{ src: 'plugin/search/search.js', async: true },
+	{ src: 'plugin/zoom-js/zoom.js', async: true },
+	{ src: 'plugin/notes/notes.js', async: true }
+]
+});
+
+</script>
+
+</body>
+</html>
